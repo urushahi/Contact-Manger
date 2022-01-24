@@ -1,0 +1,26 @@
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        border-bottom: 1px solid $grey-20;
+
+        &:hover {
+            background-color: $grey-10;
+            cursor: pointer;
+        }
+        p {
+            padding: 0.75rem 0;
+        }
+        .cellNum {
+            width: 70px;
+        }
+        &-header {
+            background-color: $grey-10;
+        }
+    }
+}

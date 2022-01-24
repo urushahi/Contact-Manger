@@ -1,0 +1,24 @@
+table {
+    tr {
+        &:hover {
+            background-color: $grey-10;
+        }
+    }
+}
+.table {
+    &-icons {
+        display: flex;
+        align-items: center;
+        justify-self: flex-end;
+        svg {
+            cursor: pointer;
+            color: $grey-80;
+            &:not(:last-child) {
+                margin-right: 0.5rem;
+            }
+            &:hover {
+                color: $grey-100;
+            }
+        }
+    }
+}
