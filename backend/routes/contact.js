@@ -38,6 +38,7 @@ router.route('/').get((req, res) => {
 router.route('/:id').get((req, res) => {
     Contact.find()
         .where("contactId").equals(req.params.id)
+        .sort({ name: "asc" })
         .then(contact => res.json(contact))
         .catch(err => res.status(400).json('Error:' + err));
 });

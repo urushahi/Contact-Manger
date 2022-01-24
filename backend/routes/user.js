@@ -30,7 +30,7 @@ router.route('/:email/:password').get((req, res) => {
                     },
                     process.env.JWT_KEY,
                     {
-                        expiresIn: "5s",
+                        expiresIn: "20m",
                     }
                 );
                 user.save()
