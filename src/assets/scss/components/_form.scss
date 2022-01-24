@@ -18,3 +18,22 @@
         }
     }
 }
+
+.input {
+    &-group {
+        input {
+            padding-right: 24px;
+            position: relative;
+        }
+
+        &-icon {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            color: #7d7878;
+            cursor: pointer;
+        }
+    }
+}

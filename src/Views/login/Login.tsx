@@ -1,11 +1,16 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { BsEye, BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
+
+    const [passwordIcon, setPasswordIcon] = useState(false);
+    const togglePasswordIcon = () => setPasswordIcon(!passwordIcon)
+
     const navigate = useNavigate();
 
     const onChangeEmail = (event: any) => {
@@ -39,7 +44,16 @@ const Login = () => {
                         <input type="email" placeholder="email" className='form-control' onChange={onChangeEmail} />
                     </div> <div className="form-group">
                         <label htmlFor="">Password</label>
-                        <input type="password" placeholder="password" className='form-control' onChange={onChangePassword} />
+                        <div className="input-group">
+                            <input type={`${passwordIcon ? "password" : "text"}`} placeholder="password" className='form-control' onChange={onChangePassword} />
+                            <div className="input-group-icon" onClick={() => togglePasswordIcon()}>
+                                {passwordIcon ?
+                                    <BsEyeFill /> :
+                                    <BsEyeSlashFill />
+                                }
+
+                            </div>
+                        </div>
                     </div>
                     <button className='btn btn-success btn-block'>Log In</button>
                     <p className="message text-center mt-3">Don't have a account? <Link to="/signup">Sign Up</Link></p>
